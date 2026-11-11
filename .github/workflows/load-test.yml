@@ -1,0 +1,27 @@
+# Manual load test. It starts its own mock model and gateway on private ports and drives concurrent chat
+# turns. Its pass bounds are wall-clock times, which a shared runner cannot hold steady, so it never runs
+# on push or pull request.
+name: load-test
+
+on:
+  workflow_dispatch:
+
+# The jobs only read the repository, so the workflow token gets read access and nothing else.
+permissions:
+  contents: read
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+    env:
+      OPENCLAW_HOME: ${{ runner.temp }}/oc
+      OPENCLAW_STATE_DIR: ${{ runner.temp }}/oc/state
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npm ci --no-audit --no-fund
+      - run: node scripts/load-test.mjs --users 50 --skip-soak

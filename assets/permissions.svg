@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 732" width="100%" role="img" shape-rendering="crispEdges" aria-label="Permission matrix for the sales agent. 2 of 4 roles hold a write grant on the two Salesforce write tools. No PartnerStack grant ships.">
+<rect width="1200" height="732" fill="#0e1117"/>
+<rect x="1" y="1" width="1198" height="730" fill="none" stroke="#2c333d" stroke-width="2"/>
+<text x="40" y="56" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e" letter-spacing="2">WHO CAN WRITE</text>
+<text x="40" y="100" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#e6e9ee" font-weight="700">Salesforce write tools, sales agent only</text>
+<text x="56" y="186" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#8b949e" font-weight="700">Role</text>
+<text x="368" y="186" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">update_account</text>
+<text x="750" y="186" font-family="SF Mono, Menlo, Consolas, monospace" font-size="23" fill="#8b949e">bulk_update_accounts</text>
+<line x1="40" y1="208" x2="1160" y2="208" stroke="#2c333d" stroke-width="2"/>
+<text x="56" y="260" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">account-executive</text>
+<text x="56" y="288" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">Marcus Oyelaran</text>
+<rect x="352" y="226" width="370" height="76" rx="0" fill="#171c24" stroke="#5bbfad" stroke-width="2"/>
+<text x="368" y="272" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee">stage</text>
+<rect x="734" y="226" width="418" height="76" rx="0" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="750" y="272" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#8b949e">no grant</text>
+<text x="56" y="346" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">csm</text>
+<text x="56" y="374" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">Dana Whitfield</text>
+<rect x="352" y="312" width="370" height="76" rx="0" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="368" y="358" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#8b949e">no grant</text>
+<rect x="734" y="312" width="418" height="76" rx="0" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="750" y="358" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#8b949e">no grant</text>
+<text x="56" y="432" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">marketing-manager</text>
+<text x="56" y="460" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">Priya Raman</text>
+<rect x="352" y="398" width="370" height="76" rx="0" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="368" y="444" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#8b949e">no grant</text>
+<rect x="734" y="398" width="418" height="76" rx="0" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="750" y="444" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#8b949e">no grant</text>
+<text x="56" y="518" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">revops-admin</text>
+<text x="56" y="546" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">Jordan Reyes</text>
+<rect x="352" y="484" width="370" height="76" rx="0" fill="#171c24" stroke="#5bbfad" stroke-width="2"/>
+<text x="368" y="530" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee">stage, owner, arr</text>
+<rect x="734" y="484" width="418" height="76" rx="0" fill="#171c24" stroke="#5bbfad" stroke-width="2"/>
+<text x="750" y="530" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee">owner, up to 25 records</text>
+<text x="56" y="604" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee" font-weight="700">PartnerStack</text>
+<text x="56" y="632" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">all roles</text>
+<rect x="352" y="570" width="800" height="76" rx="0" fill="none" stroke="#8b949e" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="368" y="616" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#8b949e">No grant shipped, plugin not switched on</text>
+<text x="40" y="696" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">From config/permissions.json. Teal outline: allowed. Dashed: no grant.</text>
+</svg>

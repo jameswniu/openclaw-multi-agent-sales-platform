@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="100%" role="img" shape-rendering="crispEdges" aria-label="Request path: a request reaches the gateway, then one of 5 agents, then the permission guard, then an integration. Four additions are numbered on the boxes they touch. The model and both backends are mocks.">
+<rect width="1200" height="620" fill="#0e1117"/>
+<rect x="1" y="1" width="1198" height="618" fill="none" stroke="#2c333d" stroke-width="2"/>
+<text x="40" y="56" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e" letter-spacing="2">REQUEST PATH</text>
+<rect x="40" y="140" width="196" height="150" rx="0" fill="#171c24" stroke="#2c333d" stroke-width="2"/>
+<text x="56" y="190" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#e6e9ee" font-weight="700">Request</text>
+<text x="56" y="228" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">from a user</text>
+<line x1="240" y1="215" x2="267" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="257" y1="207" x2="267" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="257" y1="223" x2="267" y2="215" stroke="#8b949e" stroke-width="2"/>
+<rect x="271" y="140" width="196" height="150" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="287" y="190" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#e6e9ee" font-weight="700">Gateway</text>
+<text x="287" y="228" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">50 sessions</text>
+<rect x="271" y="88" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="289" y="115" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">1</text>
+<line x1="471" y1="215" x2="498" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="488" y1="207" x2="498" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="488" y1="223" x2="498" y2="215" stroke="#8b949e" stroke-width="2"/>
+<rect x="502" y="140" width="196" height="150" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="518" y="190" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#e6e9ee" font-weight="700">Agent</text>
+<text x="518" y="228" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">5 agents</text>
+<text x="518" y="258" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">own memory</text>
+<rect x="502" y="88" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="520" y="115" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">2</text>
+<line x1="702" y1="215" x2="729" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="719" y1="207" x2="729" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="719" y1="223" x2="729" y2="215" stroke="#8b949e" stroke-width="2"/>
+<rect x="733" y="140" width="196" height="150" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="749" y="190" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#e6e9ee" font-weight="700">Permission</text>
+<text x="749" y="228" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">guard</text>
+<rect x="733" y="88" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="751" y="115" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">3</text>
+<line x1="933" y1="215" x2="960" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="950" y1="207" x2="960" y2="215" stroke="#8b949e" stroke-width="2"/>
+<line x1="950" y1="223" x2="960" y2="215" stroke="#8b949e" stroke-width="2"/>
+<rect x="964" y="140" width="196" height="150" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="980" y="190" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#e6e9ee" font-weight="700">Integration</text>
+<text x="980" y="228" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">Salesforce</text>
+<text x="980" y="258" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">PartnerStack</text>
+<rect x="964" y="88" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="982" y="115" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">4</text>
+<rect x="40" y="320" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="58" y="347" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">1</text>
+<text x="96" y="347" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee">Session cap, 50 concurrent, 120 s run and 30 s model timeout</text>
+<rect x="40" y="374" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="58" y="401" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">2</text>
+<text x="96" y="401" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee">Per-user memory, 16 KB cap per user</text>
+<rect x="40" y="428" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="58" y="455" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">3</text>
+<text x="96" y="455" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee">Per-user write guard, 2 of 4 roles can write, 25-record cap</text>
+<rect x="40" y="482" width="36" height="36" rx="0" fill="#171c24" stroke="#ff5c5c" stroke-width="3"/>
+<text x="58" y="509" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#ff5c5c" font-weight="700" text-anchor="middle">4</text>
+<text x="96" y="509" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#e6e9ee">PartnerStack plugin, built and tested, not switched on</text>
+<line x1="40" y1="548" x2="1160" y2="548" stroke="#2c333d" stroke-width="2"/>
+<text x="40" y="588" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#8b949e">The model server, Salesforce and PartnerStack backends are mocks.</text>
+</svg>
