@@ -19,13 +19,15 @@ jobs:
       fail-fast: false
       matrix:
         plugin: [salesforce, partnerstack, user-memory]
-    env:
-      OPENCLAW_HOME: ${{ runner.temp }}/oc
-      OPENCLAW_STATE_DIR: ${{ runner.temp }}/oc/state
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      # The runner context is not available in a job-level env block, so a step exports the two paths.
+      - name: Keep OpenClaw state in the runner's scratch folder
+        run: |
+          echo "OPENCLAW_HOME=$RUNNER_TEMP/oc" >> "$GITHUB_ENV"
+          echo "OPENCLAW_STATE_DIR=$RUNNER_TEMP/oc/state" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
