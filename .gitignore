@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.openclaw-home/
+.env
+.env.local
+openclaw.json.bak*
+openclaw.json.last-good
+*.log
+openclaw-workspace-state.json
+.reports/
+__pycache__/
+.openclaw-home/

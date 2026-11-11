@@ -1,0 +1,147 @@
+{
+  "id": "partnerstack",
+  "name": "PartnerStack",
+  "description": "PartnerStack partnerships, customers, rewards and transactions with rate limiting, attribution and human-approved writes.",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "backend": {
+        "anyOf": [
+          {
+            "type": "string",
+            "const": "mock"
+          },
+          {
+            "type": "string",
+            "const": "http"
+          }
+        ],
+        "description": "mock keeps everything in memory (default); http calls PartnerStack."
+      },
+      "baseUrl": {
+        "type": "string",
+        "description": "Vendor API base URL. Default https://api.partnerstack.com/api/v2"
+      },
+      "authMode": {
+        "anyOf": [
+          {
+            "type": "string",
+            "const": "basic"
+          },
+          {
+            "type": "string",
+            "const": "bearer"
+          }
+        ],
+        "description": "basic (Vendor API, default) or bearer (Partner API)."
+      },
+      "publicKey": {
+        "type": "string",
+        "description": "Basic auth username. Falls back to PARTNERSTACK_PUBLIC_KEY."
+      },
+      "secretKey": {
+        "type": "string",
+        "description": "Basic auth password. Falls back to PARTNERSTACK_SECRET_KEY."
+      },
+      "apiKey": {
+        "type": "string",
+        "description": "Bearer token. Falls back to PARTNERSTACK_API_KEY."
+      },
+      "maxRequestsPerMinute": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Local pace in any rolling 60 seconds, well under the documented 4000 per minute per IP. Default 600."
+      },
+      "dailyCallBudget": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Daily call cap for this gateway. The docs publish no number; default 5000 is an assumption."
+      },
+      "maxConcurrent": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Maximum in-flight PartnerStack requests. Default 4."
+      },
+      "requestTimeoutMs": {
+        "type": "integer",
+        "minimum": 1000,
+        "description": "Deadline for one HTTP request. Default 15000."
+      },
+      "maxWriteCents": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Largest reward or transaction amount an agent may create, in cents. Default 100000."
+      },
+      "allowedTargets": {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "customer"
+            },
+            {
+              "type": "string",
+              "const": "transaction"
+            },
+            {
+              "type": "string",
+              "const": "manual"
+            }
+          ]
+        },
+        "description": "Reward target types agents may create. Default customer and transaction, never manual."
+      },
+      "approvalTimeoutMs": {
+        "type": "integer",
+        "minimum": 1000,
+        "description": "How long a money write waits for a human decision before it is denied. Default 120000."
+      },
+      "inflightWindowMs": {
+        "type": "integer",
+        "minimum": 1000,
+        "description": "How long a sent-but-unconfirmed write is reported as in flight rather than unresolved. Neither is ever re-sent automatically. Default 60000."
+      },
+      "ledgerDir": {
+        "type": "string",
+        "description": "Directory for the append-only ledger and the daily budget counter. Default <OPENCLAW_STATE_DIR>/partnerstack."
+      },
+      "permissionsPath": {
+        "type": "string",
+        "description": "Passed to the policy seam (openclaw-policy-core). Default config/permissions.json."
+      },
+      "usersPath": {
+        "type": "string",
+        "description": "Passed to the policy seam (openclaw-policy-core). Default config/users.json."
+      }
+    },
+    "additionalProperties": false
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "partnerstack_list_partnerships",
+      "partnerstack_get_partnership",
+      "partnerstack_list_customers",
+      "partnerstack_list_rewards",
+      "partnerstack_list_transactions",
+      "partnerstack_create_reward",
+      "partnerstack_create_transaction",
+      "partnerstack_delete_transaction"
+    ]
+  },
+  "toolMetadata": {
+    "partnerstack_create_reward": {
+      "optional": true
+    },
+    "partnerstack_create_transaction": {
+      "optional": true
+    },
+    "partnerstack_delete_transaction": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+Copyright 2026 James W. Niu
+
+The Apache License 2.0 in LICENSE applies to the work added on top of the
+base agent fleet, namely:
+  plugins/policy-core/
+  plugins/partnerstack/
+  plugins/user-memory/
+  plugins/salesforce/src/permissions.test.ts
+  plugins/salesforce/src/policy-core.test.ts
+  config/permissions.json
+  config/users.json
+  scripts/
+  tools/
+  docs/
+  assets/
+and the concurrency and timeout settings in openclaw.json.
+
+Other files in this repository, including the agent workspaces under agents/,
+the mock model server under mock-llm/, and the base Salesforce mock plugin
+code, are the base fleet this work builds on and are not covered by that
+grant.
+
+This project depends on OpenClaw (https://github.com/openclaw/openclaw), which
+is MIT licensed and installed from the npm registry as the "openclaw" package.
+Its source is not copied into this repository.
