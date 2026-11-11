@@ -1,0 +1,31 @@
+{
+  "id": "salesforce",
+  "name": "Salesforce",
+  "description": "Salesforce account lookups and updates (mocked backend).",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "permissionsPath": {
+        "type": "string",
+        "description": "Path to permissions.json (identities and grants)."
+      },
+      "usersPath": {
+        "type": "string",
+        "description": "Path to the team roster users.json (email and role)."
+      }
+    },
+    "additionalProperties": false
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "salesforce_list_accounts",
+      "salesforce_get_account",
+      "salesforce_update_account",
+      "salesforce_bulk_update_accounts"
+    ]
+  }
+}

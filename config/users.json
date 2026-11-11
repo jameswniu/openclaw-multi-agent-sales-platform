@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "email": "dana.whitfield@northwind.example", "name": "Dana Whitfield", "role": "csm" },
+    { "email": "marcus.oyelaran@northwind.example", "name": "Marcus Oyelaran", "role": "account-executive" },
+    { "email": "priya.raman@northwind.example", "name": "Priya Raman", "role": "marketing-manager" },
+    { "email": "jordan.reyes@northwind.example", "name": "Jordan Reyes", "role": "revops-admin" }
+  ]
+}

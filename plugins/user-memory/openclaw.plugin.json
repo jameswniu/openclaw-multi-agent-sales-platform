@@ -1,0 +1,26 @@
+{
+  "id": "user-memory",
+  "name": "User Memory",
+  "description": "Per-user memory, keyed by the permission model's principal, one capped file per agent and user.",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "maxBytes": {
+        "type": "integer",
+        "minimum": 1024,
+        "description": "Hard cap per user and agent memory file in bytes. Oldest entries are dropped first. Default 16384."
+      }
+    },
+    "additionalProperties": false
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "memory_remember",
+      "memory_recall"
+    ]
+  }
+}

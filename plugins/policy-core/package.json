@@ -1,0 +1,19 @@
+{
+  "name": "openclaw-policy-core",
+  "version": "0.1.0",
+  "description": "One principal, one grant lookup, one write guard for the GTM agent fleet. No runtime dependencies.",
+  "type": "module",
+  "private": true,
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ]
+}

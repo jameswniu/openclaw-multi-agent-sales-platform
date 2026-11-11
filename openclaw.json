@@ -1,0 +1,245 @@
+{
+  "$schema": "./node_modules/openclaw/dist/openclaw.schema.json",
+  "gateway": {
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "none"
+    },
+    "tools": {
+      "deny": [
+        "salesforce_update_account",
+        "salesforce_bulk_update_accounts"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "minimal",
+    "subagents": {
+      "tools": {
+        "deny": [
+          "salesforce_update_account",
+          "salesforce_bulk_update_accounts"
+        ]
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "mock": {
+        "baseUrl": "http://127.0.0.1:4123/v1",
+        "apiKey": "not-needed",
+        "timeoutSeconds": 30,
+        "models": [
+          {
+            "id": "mock-router",
+            "name": "Mock Router",
+            "api": "openai-completions",
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32000,
+            "maxTokens": 4096
+          },
+          {
+            "id": "mock-marketing",
+            "name": "Mock Marketing",
+            "api": "openai-completions",
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32000,
+            "maxTokens": 4096
+          },
+          {
+            "id": "mock-sales",
+            "name": "Mock Sales",
+            "api": "openai-completions",
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32000,
+            "maxTokens": 4096
+          },
+          {
+            "id": "mock-ads",
+            "name": "Mock Ads",
+            "api": "openai-completions",
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32000,
+            "maxTokens": 4096
+          },
+          {
+            "id": "mock-auditor",
+            "name": "Mock Auditor",
+            "api": "openai-completions",
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32000,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "maxConcurrent": 50,
+      "subagents": {
+        "maxConcurrent": 50
+      },
+      "timeoutSeconds": 120,
+      "compaction": {
+        "memoryFlush": {
+          "enabled": false
+        }
+      },
+      "startupContext": {
+        "enabled": false
+      }
+    },
+    "list": [
+      {
+        "id": "router",
+        "default": true,
+        "workspace": "./agents/router",
+        "model": {
+          "primary": "mock/mock-router"
+        },
+        "subagents": {
+          "allowAgents": [
+            "marketing",
+            "sales",
+            "ads",
+            "auditor"
+          ]
+        },
+        "tools": {
+          "alsoAllow": [
+            "group:plugins",
+            "sessions_spawn",
+            "sessions_yield",
+            "subagents"
+          ]
+        }
+      },
+      {
+        "id": "marketing",
+        "workspace": "./agents/marketing",
+        "model": {
+          "primary": "mock/mock-marketing"
+        },
+        "tools": {
+          "alsoAllow": [
+            "group:plugins"
+          ],
+          "deny": [
+            "salesforce_*"
+          ]
+        }
+      },
+      {
+        "id": "sales",
+        "workspace": "./agents/sales",
+        "model": {
+          "primary": "mock/mock-sales"
+        },
+        "tools": {
+          "alsoAllow": [
+            "group:plugins"
+          ]
+        }
+      },
+      {
+        "id": "ads",
+        "workspace": "./agents/ads",
+        "model": {
+          "primary": "mock/mock-ads"
+        },
+        "tools": {
+          "alsoAllow": [
+            "group:plugins"
+          ],
+          "deny": [
+            "salesforce_*"
+          ]
+        }
+      },
+      {
+        "id": "auditor",
+        "workspace": "./agents/auditor",
+        "model": {
+          "primary": "mock/mock-auditor"
+        },
+        "tools": {
+          "alsoAllow": [
+            "group:plugins"
+          ],
+          "deny": [
+            "salesforce_update_account",
+            "salesforce_bulk_update_accounts"
+          ]
+        }
+      }
+    ]
+  },
+  "plugins": {
+    "allow": [
+      "salesforce",
+      "memory-core",
+      "user-memory"
+    ],
+    "entries": {
+      "salesforce": {
+        "enabled": true
+      },
+      "user-memory": {
+        "enabled": true
+      }
+    },
+    "slots": {
+      "memory": "none"
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.6.35",
+    "lastTouchedAt": "2026-09-15T20:54:47.909Z"
+  }
+}

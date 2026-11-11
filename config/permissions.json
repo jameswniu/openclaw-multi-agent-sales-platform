@@ -1,0 +1,48 @@
+{
+  "identities": {
+    "slack:U0MARCUS": "marcus.oyelaran@northwind.example",
+    "slack:U0JORDAN": "jordan.reyes@northwind.example",
+    "webchat:webchat": "dana.whitfield@northwind.example",
+    "webchat:gateway-client": "marcus.oyelaran@northwind.example"
+  },
+  "grants": {
+    "account-executive": {
+      "sales": {
+        "salesforce_update_account": {
+          "surfaces": [
+            "webchat",
+            "slack"
+          ],
+          "fields": [
+            "stage"
+          ]
+        }
+      }
+    },
+    "revops-admin": {
+      "sales": {
+        "salesforce_update_account": {
+          "surfaces": [
+            "webchat",
+            "slack"
+          ],
+          "fields": [
+            "stage",
+            "owner",
+            "arr"
+          ]
+        },
+        "salesforce_bulk_update_accounts": {
+          "surfaces": [
+            "webchat",
+            "slack"
+          ],
+          "fields": [
+            "owner"
+          ],
+          "maxRecords": 25
+        }
+      }
+    }
+  }
+}

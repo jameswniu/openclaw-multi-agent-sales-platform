@@ -1,0 +1,18 @@
+{
+  "name": "openclaw-multi-agent-sales-platform",
+  "description": "Five OpenClaw agents hardened for a team: per-user write guard, 50-session cap, PartnerStack plugin, per-user memory.",
+  "license": "Apache-2.0",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "mock-llm": "node mock-llm/server.js",
+    "gateway": "OPENCLAW_HOME=$PWD/.openclaw-home OPENCLAW_STATE_DIR=$PWD/.openclaw-home/state OPENCLAW_CONFIG_PATH=$PWD/openclaw.json openclaw gateway --auth none --bind loopback --allow-unconfigured",
+    "dashboard": "OPENCLAW_HOME=$PWD/.openclaw-home OPENCLAW_STATE_DIR=$PWD/.openclaw-home/state OPENCLAW_CONFIG_PATH=$PWD/openclaw.json openclaw dashboard --no-open"
+  },
+  "dependencies": {
+    "openclaw": "2026.6.35"
+  }
+}
